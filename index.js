@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
 
 
 function handleQueries(q, res) {
-  console.log(req.body);
+  console.log(q);
   const data = {
     version: "1.0.0",
     response: {
