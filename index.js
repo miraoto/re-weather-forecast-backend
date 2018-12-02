@@ -15,9 +15,9 @@ const server = app.listen(process.env.PORT || 5000, () => {
 
 // for debug
 app.get('/', (req, res) => {
-  return '今日は昨日より寒いです';
+  res.send('今日は昨日より寒いです');
 });
 
 app.post('/', (req, res) => {
-  return '今日は昨日より寒いです';
+  res.send('今日は昨日より寒いです');
 });
