@@ -15,9 +15,24 @@ const server = app.listen(process.env.PORT || 5000, () => {
 
 // for debug
 app.get('/', (req, res) => {
-  res.send('今日は昨日より寒いです');
+  handleQueries(req.body, res);
 });
 
 app.post('/', (req, res) => {
-  res.send('今日は昨日より寒いです');
+  handleQueries(req.body, res);
 });
+
+
+function handleQueries(q, res) {
+  const data = {
+    version: "string",
+    response: {
+      outputSpeech: {
+        type: 'PlainText',
+        text: '今日は昨日よりも寒いです',
+        ssml: '<speak>SSML text string to speak</speak>'
+      }
+    }
+  };
+  res.json(data);
+}
