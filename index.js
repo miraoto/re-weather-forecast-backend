@@ -25,7 +25,7 @@ app.post('/', (req, res) => {
 
 function handleQueries(q, res) {
   const data = {
-    version: "string",
+    version: "1.0.0",
     response: {
       outputSpeech: {
         type: 'PlainText',
