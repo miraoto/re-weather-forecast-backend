@@ -30,7 +30,7 @@ function handleQueries(q, res) {
     response: {
       outputSpeech: {
         type: 'PlainText',
-        text: '今日は昨日よりもちょっと寒いです',
+        text: '今日は昨日よりもちょっと寒いねってしじまさんが言っていたが、私は暑いと思っています。',
         ssml: '<speak>SSML text string to speak</speak>'
       }
     }
