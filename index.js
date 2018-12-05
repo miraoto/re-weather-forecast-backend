@@ -13,18 +13,17 @@ const server = app.listen(process.env.PORT || 5000, () => {
 
 // for debug
 app.get('/', (req, res) => {
-  handleQueries(req.body, res);
+  handleResponse(res);
 });
 
 app.post('/', (req, res) => {
-  handleQueries(req.body, res);
+  handleResponse(res);
 });
 
 
-function handleQueries(q, res) {
+function handleResponse(res) {
 
-  //const tempDiff = getTemperatureDifference();
-  const tempDiff = 6;
+  const tempDiff = getTemperatureDifference();
 
   const data = {
     version: "1.0.0",
@@ -51,11 +50,14 @@ function getTemperatureDifference() {
     `&appid=${process.env.API_KEY}` +
     `&start=${today}` +
     `&end=${yesterday}`
-  const response = syncRequest('GET', yesterdayUrl);
-  const body = JSON.parse(response.getBody('utf8')) || {};
 
-  console.log(todayUrl);
-  console.log(yesterdayUrl);
+  //const response = syncRequest('GET', yesterdayUrl);
+  //const body = JSON.parse(response.getBody('utf8')) || {};
+
+  const todayTemp = 3;
+  const yesterdayTemp = 5;
+
+  return todayTemp - yesterdayTemp;
 }
 
 function getMessage(tempDiff) {
