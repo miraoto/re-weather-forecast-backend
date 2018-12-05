@@ -22,7 +22,6 @@ app.post('/', (req, res) => {
 
 
 function handleQueries(q, res) {
-  console.log(q);
 
   //const tempDiff = getTemperatureDifference();
   const tempDiff = 6;
